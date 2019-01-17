@@ -6,11 +6,11 @@
   "scripts": {
     "build": "webpack",
     "build:dev": "webpack --watch",
-    "server": "http-server dist",
-    "server:dev": "webpack-dev-server",
+    "server": "node lib/server.js",
+    "server:dev": "nodemon --watch lib lib/server.js",
     "test": "mocha",
     "test:dev": "mocha --watch",
-    "dev": "npm-run-all -p server:dev test:dev"
+    "dev": "npm-run-all -p build:dev server:dev test:dev"
   },
   "author": "",
   "license": "ISC",
@@ -29,5 +29,9 @@
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.14",
     "webpack-livereload-plugin": "^2.2.0"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-logging": "^1.1.1"
   }
 }
