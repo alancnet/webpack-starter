@@ -31,7 +31,9 @@
     "webpack-livereload-plugin": "^2.2.0"
   },
   "dependencies": {
+    "body-parser": "^1.18.3",
+    "chalk": "^2.4.2",
     "express": "^4.16.4",
-    "express-logging": "^1.1.1"
+    "morgan": "^1.9.1"
   }
 }
