@@ -10,13 +10,16 @@
     "server:dev": "nodemon --watch lib lib/server.js",
     "test": "mocha",
     "test:dev": "mocha --watch",
-    "dev": "npm-run-all -p build:dev server:dev test:dev"
+    "pwa:build": "nodemon --verbose --ignore dist --exec webpack",
+    "pwa:dev": "npm-run-all -p server build:dev",
+    "dev": "npm-run-all -p server:dev build:dev test:dev"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "chai": "^4.2.0",
     "css-loader": "^2.1.0",
+    "file-loader": "^3.0.1",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "http-server": "^0.11.1",
@@ -28,7 +31,9 @@
     "webpack": "^4.28.2",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.14",
-    "webpack-livereload-plugin": "^2.2.0"
+    "webpack-livereload-plugin": "^2.2.0",
+    "webpack-pwa-manifest": "^4.0.0",
+    "workbox-webpack-plugin": "^3.6.3"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
