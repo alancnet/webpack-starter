@@ -9,6 +9,20 @@ module.exports = {
   devServer: {
     contentBase: Path.join(__dirname, 'dist')
   },
+  module: {
+    rules: [
+      {
+        test: /\.m?js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env', '@babel/preset-react']
+          }
+        }
+      }
+    ]
+  },
   plugins: [
     new HtmlWebpackPlugin({
       meta: {viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no'}

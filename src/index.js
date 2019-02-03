@@ -1,3 +1,6 @@
+const React = require('react')
+const ReactDOM = require('react-dom')
+
 const client = require('./client')
 const serviceWorkerFile = require('file-loader!./service-worker.js')
 
@@ -22,4 +25,9 @@ document.addEventListener('DOMContentLoaded', () => {
   client.addEventListener('message', evt => {
     console.log(evt.data)
   })
+
+  ReactDOM.render(
+    <h1>Hello World!</h1>,
+    document.body
+  )
 })
