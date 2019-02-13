@@ -4,6 +4,7 @@ require('material-design-lite/dist/material.indigo-green.min.css')
 
 const angular = require('angular')
 angular.module('app', [])
+require('./body')
 
 const serviceWorkerFile = require('file-loader!./service-worker.js')
 
@@ -21,5 +22,5 @@ if ('serviceWorker' in navigator) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  document.body.innerHTML = `<h1>Webpack-Starter</h1>`
+  angular.bootstrap(document.documentElement, ['app'])
 })
