@@ -21,4 +21,5 @@ if ('serviceWorker' in navigator) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  document.body.innerHTML = `<h1>Webpack-Starter</h1>`
 })
