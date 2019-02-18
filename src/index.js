@@ -1,10 +1,6 @@
-require('material-icons/iconfont/material-icons.css')
-require('material-design-lite/dist/material.indigo-green.min.css')
-
-
-const angular = require('angular')
-angular.module('app', [])
-require('./body')
+require('./app')
+require('./components')
+require('./theme')
 
 const serviceWorkerFile = require('file-loader!./service-worker.js')
 
