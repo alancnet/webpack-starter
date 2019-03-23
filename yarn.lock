@@ -1645,6 +1645,14 @@ figgy-pudding@^3.5.1:
   resolved "https://registry.yarnpkg.com/figgy-pudding/-/figgy-pudding-3.5.1.tgz#862470112901c727a0e495a80744bd5baa1d6790"
   integrity sha512-vNKxJHTEKNThjfrdJwHc7brvM6eVevuO5nTj6ez8ZQ1qbXTvGthucRF7S4vf2cr71QVnT70V34v0S1DyQsti0w==
 
+file-loader@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/file-loader/-/file-loader-3.0.1.tgz#f8e0ba0b599918b51adfe45d66d1e771ad560faa"
+  integrity sha512-4sNIOXgtH/9WZq4NvlfU3Opn5ynUsqBwSLyM+I7UOwdGigTBYfVVQEwe/msZNX/j4pCJTIM14Fsw66Svo1oVrw==
+  dependencies:
+    loader-utils "^1.0.2"
+    schema-utils "^1.0.0"
+
 fill-range@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/fill-range/-/fill-range-4.0.0.tgz#d544811d428f98eb06a63dc402d2403c328c38f7"
@@ -2033,6 +2041,13 @@ html-minifier@^3.2.3, html-minifier@^3.5.8:
     param-case "2.1.x"
     relateurl "0.2.x"
     uglify-js "3.4.x"
+
+html-webpack-harddisk-plugin@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/html-webpack-harddisk-plugin/-/html-webpack-harddisk-plugin-1.0.1.tgz#4fc034d3440ec2a223dbe8fa1a5a2eb905e86fa5"
+  integrity sha512-GWfutTqfxOe53qEKocqAFrrLVP/EJbmJZDAS5jBBmALkfyc2aakoQkSgo3fitYJORWcN0Fi8ekuySxfffhhRYw==
+  dependencies:
+    mkdirp "^0.5.1"
 
 html-webpack-plugin@^3.2.0:
   version "3.2.0"
@@ -2616,7 +2631,7 @@ loader-runner@^2.3.0:
   resolved "https://registry.yarnpkg.com/loader-runner/-/loader-runner-2.3.1.tgz#026f12fe7c3115992896ac02ba022ba92971b979"
   integrity sha512-By6ZFY7ETWOc9RFaAIb23IjJVcM4dvJC/N57nmdz9RSkMXvAXGI7SyVlAw3v8vjtDRlqThgVDVmTnr9fqMlxkw==
 
-loader-utils@^0.2.16:
+loader-utils@^0.2.11, loader-utils@^0.2.16:
   version "0.2.17"
   resolved "https://registry.yarnpkg.com/loader-utils/-/loader-utils-0.2.17.tgz#f86e6374d43205a6e6c60e9196f17c0299bfb348"
   integrity sha1-+G5jdNQyBabmxg6RlvF8Apm/s0g=
@@ -2626,7 +2641,7 @@ loader-utils@^0.2.16:
     json5 "^0.5.0"
     object-assign "^4.0.1"
 
-loader-utils@^1.1.0, loader-utils@^1.2.1:
+loader-utils@^1.0.2, loader-utils@^1.1.0, loader-utils@^1.2.1:
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/loader-utils/-/loader-utils-1.2.3.tgz#1ff5dc6911c9f0a062531a4c04b609406108c2c7"
   integrity sha512-fkpz8ejdnEMG3s37wGL07iSBDg99O9D5yflE9RGNH3hRdx9SOwYfnGYdZOUIZitN8E+E2vkq3MUMYMvPYl5ZZA==
@@ -4062,6 +4077,11 @@ signal-exit@^3.0.0:
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.2.tgz#b5fdc08f1287ea1178628e415e25132b73646c6d"
   integrity sha1-tf3AjxKH6hF4Yo5BXiUTK3NkbG0=
 
+simple-html-tokenizer@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/simple-html-tokenizer/-/simple-html-tokenizer-0.1.1.tgz#05c2eec579ffffe145a030ac26cfea61b980fabe"
+  integrity sha1-BcLuxXn//+FFoDCsJs/qYbmA+r4=
+
 snapdragon-node@^2.0.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/snapdragon-node/-/snapdragon-node-2.1.1.tgz#6c175f86ff14bdb0724563e8f3c1b021a286853b"
@@ -4379,6 +4399,15 @@ supports-color@^5.1.0, supports-color@^5.3.0, supports-color@^5.5.0:
   integrity sha512-QjVjwdXIt408MIiAqCX4oUKsgU2EqAGzs2Ppkm4aQYbjm+ZEWEcW4SfFNTr4uMNZma0ey4f5lgLrkB0aX0QMow==
   dependencies:
     has-flag "^3.0.0"
+
+svg-inline-loader@^0.8.0:
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/svg-inline-loader/-/svg-inline-loader-0.8.0.tgz#7e9d905d80d0b4e68d2df21afcd08ee9e9a3ea6e"
+  integrity sha512-rynplY2eXFrdNomL1FvyTFQlP+dx0WqbzHglmNtA9M4IHRC3no2aPAl3ny9lUpJzFzFMZfWRK5YIclNU+FRePA==
+  dependencies:
+    loader-utils "^0.2.11"
+    object-assign "^4.0.1"
+    simple-html-tokenizer "^0.1.1"
 
 tapable@^1.0.0, tapable@^1.1.0:
   version "1.1.1"
