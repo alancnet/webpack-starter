@@ -56,6 +56,26 @@ app.listen = (port = config.port || (app.settings.env === 'production' ? 80 : 30
     const host = [process.env.HOSTNAME || process.env.COMPUTERNAME || 'localhost', process.env.USERDNSDOMAIN].filter(x => x).join('.').toLowerCase()
     const url = `http://${host}:${app.server.address().port}`
     console.log(`Server running at ${chalk.underline(chalk.blueBright(url))}`)
+    if (mode === 'development') {
+      console.log('Establishing reverse proxy')
+      const rc = require('persist-proxy/src/reverse-client')
+      rc({
+        listen: {
+          host: '127.0.0.1',
+          port: port
+        },
+        connect: [
+          {
+            host: 'www.alanc.net',
+            port: 8000
+          },
+          {
+            host: '0.0.0.0',
+            port: port
+          }
+        ]
+      })
+    }
   })
 })
 

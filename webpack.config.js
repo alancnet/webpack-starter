@@ -11,7 +11,7 @@ module.exports = {
   mode: mode,
   entry: {
     main: [
-      mode === 'development' && `webpack-hot-middleware/client?path=/__webpack__/__webpack_hmr&timeout=20000`,
+      mode === 'development' && `webpack-hot-middleware/client?path=__webpack__/__webpack_hmr&timeout=20000`,
       Path.join(__dirname, 'app/main.js')
     ].filter(x => x)
   },
@@ -42,6 +42,11 @@ module.exports = {
   },
   plugins: [
     new VueLoaderPlugin(),
+    new HtmlWebpackPlugin({
+      template: Path.join(__dirname, 'app/index.html'),
+      inject: true,
+      templateParameters: { }
+    }),
     new WebpackPwaManifest({
       name: 'CHANGEME',
       short_name: 'changeme',
@@ -55,11 +60,6 @@ module.exports = {
       ],
       inject: true,
       orientation: 'omit'
-    }),
-    new HtmlWebpackPlugin({
-      template: Path.join(__dirname, 'app/index.html'),
-      inject: true,
-      templateParameters: { }
     }),
     mode === 'development' && new webpack.HotModuleReplacementPlugin()
   ].filter(x => x)
