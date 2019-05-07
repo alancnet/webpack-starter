@@ -4,19 +4,22 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
+    "build": "webpack --mode=production",
     "build:dev": "webpack --watch",
-    "server": "node lib/server.js",
-    "server:dev": "nodemon --watch lib lib/server.js",
+    "server": "node server/server.js --mode=production",
+    "server:dev": "nodemon --watch server server/server.js --mode=development",
     "test": "mocha",
     "test:dev": "mocha --watch",
-    "dev": "npm-run-all -p build:dev server:dev test:dev"
+    "pwa:build": "nodemon --verbose --ignore dist --exec webpack",
+    "pwa:dev": "npm-run-all -p server build:dev",
+    "dev": "npm-run-all -p server:dev test:dev"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "chai": "^4.2.0",
     "css-loader": "^2.1.0",
+    "file-loader": "^3.0.1",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "http-server": "^0.11.1",
@@ -28,13 +31,32 @@
     "webpack": "^4.28.2",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.14",
-    "webpack-livereload-plugin": "^2.2.0"
+    "webpack-livereload-plugin": "^2.2.0",
+    "webpack-pwa-manifest": "^4.0.0",
+    "workbox-webpack-plugin": "^3.6.3"
   },
   "dependencies": {
+    "@babel/core": "^7.4.4",
+    "angular": "^1.7.7",
+    "angular-animate": "^1.7.7",
+    "angular-aria": "^1.7.7",
+    "angular-material": "^1.1.12",
+    "angular-ui-router": "^1.0.20",
+    "babel-loader": "^8.0.5",
     "body-parser": "^1.18.3",
     "chalk": "^2.4.2",
+    "es6-string-html-template": "^1.0.2",
     "express": "^4.16.4",
+    "express-ws": "^4.0.0",
+    "file-loader": "^3.0.1",
+    "material-icons": "^0.3.0",
     "morgan": "^1.9.1",
+    "text-loader": "^0.0.1",
+    "typeface-roboto": "^0.0.54",
+    "vue": "^2.6.10",
+    "vue-loader": "^15.7.0",
+    "vue-template-compiler": "^2.6.10",
+    "webpack-hot-middleware": "^2.24.4",
     "ws": "^6.1.2"
   }
 }
