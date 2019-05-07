@@ -51,11 +51,14 @@
     "file-loader": "^3.0.1",
     "material-icons": "^0.3.0",
     "morgan": "^1.9.1",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2",
     "text-loader": "^0.0.1",
     "typeface-roboto": "^0.0.54",
     "vue": "^2.6.10",
     "vue-loader": "^15.7.0",
     "vue-template-compiler": "^2.6.10",
+    "vuetify": "^1.5.14",
     "webpack-hot-middleware": "^2.24.4",
     "ws": "^6.1.2"
   }

@@ -31,6 +31,10 @@ module.exports = {
         loader: ['vue-style-loader', 'css-loader', 'less-loader']
       },
       {
+        test: /\.styl$/,
+        loader: ['vue-style-loader', 'css-loader', 'stylus-loader']
+      },
+      {
         test: /\.(ttf|woff|woff2|svg|eot)$/,
         loader: 'file-loader'
       }
