@@ -1,5 +1,6 @@
-const client = require('./client')
-const serviceWorkerFile = require('file-loader!./service-worker.js')
+import { createApp } from 'vue'
+import serviceWorkerFile from 'file-loader!./service-worker.js'
+import App from './App.vue'
 
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.getRegistrations()
@@ -14,12 +15,15 @@ if ('serviceWorker' in navigator) {
   });
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  client.connect()
-  client.addEventListener('open', () => {
-    client.send('Hello Server')
-  })
-  client.addEventListener('message', evt => {
-    console.log(evt.data)
-  })
-})
+// document.addEventListener('DOMContentLoaded', () => {
+//   client.connect()
+//   client.addEventListener('open', () => {
+//     client.send('Hello Server')
+//   })
+//   client.addEventListener('message', evt => {
+//     console.log(evt.data)
+//   })
+// })
+
+const app = createApp(App)
+app.mount('#app')

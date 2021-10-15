@@ -1,6 +1,4 @@
-FROM node
-
-RUN npm install -g yarn
+FROM node:16
 
 EXPOSE 80
 
