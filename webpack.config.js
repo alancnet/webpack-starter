@@ -1,10 +1,29 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin')
 const LiveReloadPlugin = require('webpack-livereload-plugin')
-
+const ExportsPlugin = require('exports-library-plugin')
 module.exports = {
-  entry: './src/index.js',
-  mode: process.env.NODE_ENV || 'development',
+  entry: {
+    module: {
+      import: './src/index.js',
+      filename: 'changeme.js',
+      library: {
+         name: 'exports',
+         type: 'assign-properties',
+      }
+    }
+  },
+  experiments: {
+    outputModule: true
+  },
+  output: {
+    clean: true
+  },
+  mode: process.env.NODE_ENV || 'production',
+  // optimization: {
+  //   usedExports: false,
+  //   minimize: true
+  // },
   devServer: {
     contentBase: `${__dirname}/dist`,
     compress: false,
@@ -20,17 +39,60 @@ module.exports = {
     new HtmlWebpackHarddiskPlugin(),
     new LiveReloadPlugin({
       appendScriptTag: true
-    })
+    }),
+    new ExportsPlugin()
   ],
   module: {
     rules: [
-      { test: /\.html$/, loader: 'html-loader' },
-      { test: /\.css$/,  loader: 'style-loader!css-loader' },
-      { test: /\.less$/, loader: 'style-loader!css-loader!less-loader' },
-      { test: /\.png$/,  loader: 'file-loader' },
-      { test: /\.jpg$/,  loader: 'file-loader' },
-      { test: /\.gif$/,  loader: 'file-loader' },
-      { test: /\.svg$/,  loader: 'svg-inline-loader' }
+      {
+        test: /\.[cm]?js$/,
+        use: [
+          { loader: 'babel-loader' }
+        ]
+      },
+      {
+        test: /\.html$/,
+        use: [
+          { loader: 'html-loader' }
+        ]
+      },
+      {
+        test: /\.css$/,
+        use: [
+          { loader: 'css-loader' }
+        ]
+      },
+      {
+        test: /\.less$/,
+        use: [
+          { loader: 'css-loader' },
+          { loader: 'less-loader' }
+        ]
+      },
+      {
+        test: /\.png$/,
+        use: [
+          { loader: 'file-loader' }
+        ]
+      },
+      {
+        test: /\.jpg$/,
+        use: [
+          { loader: 'file-loader' }
+        ]
+      },
+      {
+        test: /\.gif$/,
+        use: [
+          { loader: 'file-loader' }
+        ]
+      },
+      {
+        test: /\.svg$/,
+        use: [
+          { loader: 'svg-inline-loader' }
+        ]
+      }
     ]
   }
 }

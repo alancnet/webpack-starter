@@ -1,36 +1,40 @@
 {
-  "name": "**CHANGEME**",
+  "name": "changeme",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/changeme.js",
   "scripts": {
-    "build": "webpack",
-    "build:dev": "webpack --watch",
+    "build": "NODE_ENV=production webpack",
+    "build:dev": "NODE_ENV=production webpack --watch",
     "server": "http-server dist",
     "server:dev": "webpack-dev-server",
     "test": "mocha",
     "test:dev": "mocha --watch",
-    "dev": "npm-run-all -p server:dev test:dev"
+    "dev": "NODE_ENV=development npm-run-all -p server:dev test:dev"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "babel-loader": "^8.2.3",
     "chai": "^4.2.0",
     "css-loader": "^2.1.0",
+    "exports-library-plugin": "^0.0.4",
     "file-loader": "^3.0.1",
     "html-loader": "^0.5.5",
-    "html-webpack-harddisk-plugin": "^1.0.1",
-    "html-webpack-plugin": "^3.2.0",
+    "html-webpack-harddisk-plugin": "^2.0.0",
+    "html-webpack-plugin": "^5.5.0",
     "http-server": "^0.11.1",
     "less": "^3.9.0",
     "less-loader": "^4.1.0",
     "mocha": "^5.2.0",
     "npm-run-all": "^4.1.5",
-    "style-loader": "^0.23.1",
+    "style-loader": "^3.3.1",
     "svg-inline-loader": "^0.8.0",
-    "webpack": "^4.28.2",
+    "webpack": "^5.64.2",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.14",
-    "webpack-livereload-plugin": "^2.2.0"
+    "webpack-livereload-plugin": "^3.0.2"
   }
 }
